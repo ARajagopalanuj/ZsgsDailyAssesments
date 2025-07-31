@@ -29,15 +29,12 @@ class MyString{
 
 
 	public char charAt(int index){ //char charAt(int index
-	int count=0;
-	for(char c:arr){
-	if(count==index){
-	return c;
-	}
-	count++;	
+	if(index<arr.length){
+	return  arr[index];
 	}
 	return '-';
 	}
+
 
 
 	public boolean equals(String str){
@@ -101,6 +98,7 @@ class MyString{
 		j++;
 		continue;
 	}
+	i=i-j;
 	j=0;
 	}
 	
