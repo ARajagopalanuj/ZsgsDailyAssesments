@@ -3,6 +3,7 @@
 --->Consumer thread should remove items.
 Ensure the buffer size is limited to 5 items.. Use Threads to implement the ATM machine, where create thread to check the PIN number, another thread to perform the cash withdrawal, another one to check the balance amount and print the receipt*/
 import java.util.ArrayList;
+import java.util.Scanner;
 class ProCos{
 
 	int capacity=5;
@@ -59,6 +60,15 @@ class Main{
 	public static void main(String[] args){
 
 	ProCos pc=new ProCos();
+	Scanner scan=new Scanner(System.in);
+	while(true){
+
+	System.out.println("Enter the sleep time\nEnter 0 to exit"); 
+	int n=scan.nextInt();
+	if(n==0){
+	break;
+	}
+				
 
 	Thread  t1=new Thread(()->{
 				for(int i=0;i<10;i++){
@@ -75,8 +85,9 @@ class Main{
 	Thread  t2=new Thread(()->{
 				for(int i=0;i<10;i++){
 				
+				
 				try{
-				Thread.sleep(2000);
+				Thread.sleep(n);
 				}catch(InterruptedException e){
 				System.out.println(e.getMessage());
 				}
@@ -87,6 +98,8 @@ class Main{
 	t1.start();
 	
 	t2.start();
+
+	}
 
 				
 	
