@@ -15,12 +15,13 @@ import java.util.Scanner;
 import java.util.HashSet;
 import java.util.TreeSet;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
 class Hset{
 
 	public static void main(String[] args){
 	
-	HashSet<Integer>set=new HashSet<>();
+	LinkedHashSet<Integer>set=new LinkedHashSet<>();
 
 	set.add(1);
 	set.add(100);
@@ -125,5 +126,6 @@ class Hset{
 
 	}
 }
+
 
 
