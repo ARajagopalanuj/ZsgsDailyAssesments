@@ -22,15 +22,16 @@ class Main{
 	PrintCount pc=new PrintCount();
 
 	Thread t1=new Thread(()->pc.print());
-	Thread t2=new Thread(()->pc.print());
-	Thread t3=new Thread(()->pc.print());
-
 	t1.start();
+	Thread t2=new Thread(()->pc.print());
 	t2.start();
+	Thread t3=new Thread(()->pc.print());
 	t3.start();
+	
+	
+	
 	try{
-	t1.join();
-	t2.join();
+	
 	t3.join();
 	}catch(InterruptedException e){
 	System.out.println(e.getMessage());
