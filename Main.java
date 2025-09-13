@@ -7,6 +7,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("welcome");
+        System.out.println("up move    ->8");
+        System.out.println("down move  ->2");
+        System.out.println("left move  ->4");
+        System.out.println("right move ->6");
         Scanner scan=new Scanner(System.in);
 
         int[][] board=new int[4][4];
@@ -185,4 +189,4 @@ public class Main {
          return count0==0||set.size()== board.length*board[0].length;
 
     }
-}i
+}
