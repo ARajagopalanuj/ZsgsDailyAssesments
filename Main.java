@@ -72,11 +72,14 @@ public class Main {
                         if (board[i][j + 1] == 0) {
                         board[i][j + 1] = board[i][k];
                         board[i][k] = 0;
+                        continue;
                         }
                         if(board[i][j+1]==board[i][k]) {
                             board[i][j + 1] += board[i][k];
                             board[i][k] = 0;
+                            continue;
                         }
+                        break;
                 }
             }
         }
@@ -93,11 +96,14 @@ public class Main {
                     if (board[i][j- 1] == 0) {
                         board[i][j- 1] = board[i][k];
                         board[i][k] = 0;
+                        continue;
                     }
                     if(board[i][j-1]==board[i][k]) {
                         board[i][j- 1] += board[i][k];
                         board[i][k] = 0;
+                        continue;
                     }
+                    break;
                 }
             }
         }
@@ -114,11 +120,14 @@ public class Main {
                     if(board[i-1][j]==0){
                         board[i-1][j]=board[k][j];
                         board[k][j]=0;
+                        continue;
                     }
                     if(board[i-1][j]==board[k][j]){
                         board[i-1][j]+=board[k][j];
                         board[k][j]=0;
+                        continue;
                     }
+                    break;
                 }
 
             }
@@ -136,12 +145,16 @@ public class Main {
                     if (board[i + 1][j] == 0) {
                         board[i + 1][j] = board[k][j];
                         board[k][j] = 0;
+                        continue;
+
 
                     }
                     if(board[i+1][j]==board[k][j]){
                         board[i+1][j]+=board[k][j];
                         board[k][j]=0;
+                        continue;
                     }
+                    break;
 
                 }
             }
@@ -166,7 +179,7 @@ public class Main {
     static boolean winCheck(int[][] board){
         for(int i=0;i<board.length;i++){
             for(int j=0;j<board.length;j++){
-                if(board[i][j]==32){
+                if(board[i][j]==2408){
                     return true;
                 }
             }
@@ -175,7 +188,7 @@ public class Main {
     }
     public static  boolean gameOver(int[][]board){
         int count0=0;
-        int space=0;
+
         Set<Integer> set=new HashSet<>();
          for(int i=0;i<board.length;i++){
              for(int j=0;j<board[0].length;j++){
